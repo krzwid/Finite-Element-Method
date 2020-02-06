@@ -37,18 +37,18 @@ matrix(n+1,n+1) = int(((n/2)^2 -(n/2*x-n+1)^2), x, [(2*n-2)/n, 2])-1;
 w_result = linsolve(matrix,matrix3);
 
 %stworzenie wektora rozwi¹zañ
-result = (1:n+1);
+result = (1:n);
 
 %obliczenie wartoœci szukanej funkcji w punktach odleg³ych od siebie o
 %2/n na przedziale [0;2]
 for k=1:n
     result(k) = w_result(k) * (-n/2*(2/n*(k-1))) + w_result(k+1)*(n/2*(2/n*(k-1))+2);
 end
-result(n+1) = w_result(n+1);
+%result(n+1) = w_result(n+1);
 
 %stworzenie punktów odleg³ych od siebie o 2/n na przedziale [0;2]
-points = (1:n+1);
-for k=1:n+1
+points = (1:n);
+for k=1:n
     points(k) = 2/n * (k-1);
 end
 
